@@ -1,0 +1,70 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#f5f5f5", padding: 20 },
+  form: {
+    marginTop: 40,
+    backgroundColor: "#fff",
+    padding: 20,
+    borderRadius: 15,
+    elevation: 3,
+  },
+  titulo: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginBottom: 20,
+    color: "#333",
+    textAlign: "center",
+  },
+  label: { fontWeight: "bold", marginTop: 15, color: "#555" },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    padding: 12,
+    borderRadius: 8,
+    marginTop: 5,
+    backgroundColor: "#fafafa",
+  },
+  row: { flexDirection: "row", alignItems: "center", gap: 10 },
+  inputContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fafafa",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+  },
+  inputField: {
+    flex: 1,
+    padding: 12,
+    fontSize: 16,
+    color: "#333",
+  },
+  btnClear: { padding: 15 },
+  btnScan: {
+    backgroundColor: "#2196F3",
+    padding: 15,
+    borderRadius: 8,
+    marginTop: 5,
+    justifyContent: "center",
+  },
+  btnSalvar: {
+    backgroundColor: "#2E7D32",
+    padding: 18,
+    borderRadius: 10,
+    marginTop: 30,
+    alignItems: "center",
+  },
+  btnTexto: { color: "#fff", fontWeight: "bold", fontSize: 16 },
+  btnCancelarScan: {
+    backgroundColor: "red",
+    padding: 18,
+    borderRadius: 10,
+    marginHorizontal: 20,
+    marginBottom: 130, // 110px da barra + 20px de respiro
+    alignItems: "center",
+  },
+  inputDisabled: { backgroundColor: "#eee", color: "#888" },
+  cameraContainer: { flex: 1, backgroundColor: "#333" },
+});

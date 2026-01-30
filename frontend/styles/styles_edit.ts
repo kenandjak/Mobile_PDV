@@ -1,0 +1,66 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#f4f4f4", padding: 15 },
+  card: {
+    backgroundColor: "#fff",
+    padding: 20,
+    borderRadius: 15,
+    elevation: 4,
+    marginBottom: 120, // Espaço para não cobrir com a TabBar
+  },
+  label: { fontWeight: "bold", marginTop: 15, color: "#444", fontSize: 14 },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ddd",
+    padding: 12,
+    borderRadius: 8,
+    marginTop: 5,
+    backgroundColor: "#fff",
+    fontSize: 16,
+  },
+  row: { flexDirection: "row", alignItems: "center", gap: 8 },
+  rowInputs: { flexDirection: "row", justifyContent: "space-between" },
+  btnSearch: { backgroundColor: "#555", padding: 15, borderRadius: 8 },
+  btnClear: { padding: 15 },
+  btnCamera: { backgroundColor: "#2196F3", padding: 15, borderRadius: 8 },
+  btnSalvar: {
+    backgroundColor: "#2E7D32",
+    padding: 18,
+    borderRadius: 10,
+    marginTop: 25,
+    alignItems: "center",
+  },
+  btnDeletar: {
+    backgroundColor: "#d32f2f",
+    padding: 15,
+    borderRadius: 10,
+    marginTop: 10,
+    alignItems: "center",
+  },
+  btnTexto: { color: "#fff", fontWeight: "bold", fontSize: 16 },
+  btnLanterna: {
+    position: "absolute",
+    top: 50,
+    right: 20,
+    backgroundColor: "rgba(0,0,0,0.6)",
+    padding: 15,
+    borderRadius: 30,
+    zIndex: 10,
+  },
+  btnFecharScan: {
+    backgroundColor: "red",
+    padding: 18,
+    borderRadius: 10,
+    marginHorizontal: 20,
+    marginBottom: 130,
+    alignItems: "center",
+  },
+  infoText: {
+    textAlign: "center",
+    color: "#888",
+    marginTop: 30,
+    fontStyle: "italic",
+  },
+  divider: { height: 1, backgroundColor: "#eee", marginVertical: 20 },
+});
