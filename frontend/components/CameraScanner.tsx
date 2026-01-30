@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     padding: 18,
     borderRadius: 10,
     marginHorizontal: 20,
-    marginBottom: 130, // Mantendo a elevação da sua TabBar
+    marginBottom: 130,
     alignItems: "center",
   },
   btnText: { color: "#fff", fontWeight: "bold", fontSize: 16 },

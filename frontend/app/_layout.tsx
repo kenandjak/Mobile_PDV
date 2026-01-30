@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons"; // Ícones que já vêm no Expo
+import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { Alert, BackHandler, TouchableOpacity } from "react-native";
 
@@ -6,7 +6,7 @@ export default function Layout() {
   const handleSair = () => {
     Alert.alert("Sair", "Deseja fechar o aplicativo?", [
       { text: "Não", style: "cancel" },
-      { text: "Sim", onPress: () => BackHandler.exitApp() }, // Fecha o app no Android
+      { text: "Sim", onPress: () => BackHandler.exitApp() },
     ]);
   };
   return (
@@ -37,7 +37,7 @@ export default function Layout() {
           tabBarIcon: ({ color }) => (
             <Ionicons name="cart" size={28} color={color} />
           ),
-          headerShown: true, // false: Esconde o título no topo para não atrapalhar a câmera
+          headerShown: true,
           headerTitle: "MercadoApp",
         }}
       />
@@ -54,6 +54,7 @@ export default function Layout() {
         }}
       />
 
+      {/* Aba de Gerenciamento (Arquivo edit.tsx) */}
       <Tabs.Screen
         name="edit"
         options={{
@@ -62,7 +63,7 @@ export default function Layout() {
           tabBarIcon: ({ color }) => (
             <Ionicons name="create" size={28} color={color} />
           ),
-          headerTitle: "Editar ou Excluir",
+          headerTitle: "Gerenciamento",
         }}
       />
     </Tabs>

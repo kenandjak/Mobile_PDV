@@ -45,7 +45,7 @@ export default function HomeScreen() {
   }
 
   const handleBarCodeScanned = async ({ data }: { data: string }) => {
-    if (scanned) return; // Evita múltiplas chamadas simultâneas
+    if (scanned) return;
     setScanned(true);
 
     try {
@@ -79,7 +79,6 @@ export default function HomeScreen() {
       return Alert.alert("Aviso", "O carrinho está vazio.");
 
     try {
-      // Envia para o backend
       await apiService.finalizarVenda(itens);
 
       Alert.alert("Sucesso", "Venda finalizada!");
@@ -95,7 +94,7 @@ export default function HomeScreen() {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
     >
-      {/* 1. Área da Câmera (Superior) */}
+      {/* 1. Área da Câmera */}
       <View style={styles.cameraContainer}>
         {isFocused && (
           <CameraView
@@ -131,7 +130,7 @@ export default function HomeScreen() {
         )}
       </View>
 
-      {/* 2. Painel de Controle e Lista (Inferior) */}
+      {/* 2. Painel de Controle e Lista */}
       <View style={styles.painelVenda}>
         <View style={styles.headerCarrinho}>
           <Text style={styles.titulo}>🛒 Compras</Text>

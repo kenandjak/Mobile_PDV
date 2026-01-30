@@ -18,8 +18,6 @@ export default function CadastroScreen() {
   const [mostrarCamera, setMostrarCamera] = useState(false);
   const isFocused = useIsFocused();
   const [lanterna, setLanterna] = useState(false);
-
-  // 1. NOVO ESTADO DE VISIBILIDADE
   const [exibirForm, setExibirForm] = useState(false);
 
   const [form, setForm] = useState({
@@ -42,21 +40,19 @@ export default function CadastroScreen() {
     );
   }
 
-  // Função disparada quando a câmera lê o código
   const handleScan = ({ data }: { data: string }) => {
     setForm({ ...form, codigo_barras: data });
-    setExibirForm(true); // 3. MOSTRA AO ESCANEAR
+    setExibirForm(true);
     setMostrarCamera(false);
     Alert.alert("Sucesso", "Código de barras registrado!");
   };
 
   const limparCodigo = () => {
     setForm({ codigo_barras: "", nome: "", preco: "", estoque: "" });
-    setExibirForm(false); // 2. ESCONDE AO LIMPAR
+    setExibirForm(false);
   };
 
   const salvarProduto = async () => {
-    // Validação básica
     if (!form.codigo_barras || !form.nome || !form.preco) {
       return Alert.alert("Aviso", "Preencha os campos obrigatórios.");
     }
@@ -71,7 +67,6 @@ export default function CadastroScreen() {
       await apiService.cadastrarProduto(dadosParaEnviar);
 
       Alert.alert("Sucesso", "Produto cadastrado!");
-      // Limpa o formulário após salvar
       setForm({ codigo_barras: "", nome: "", preco: "", estoque: "" });
     } catch (err: any) {
       const erroMsg = err.response?.data?.detail || "Erro de conexão.";
@@ -79,7 +74,6 @@ export default function CadastroScreen() {
     }
   };
 
-  // Se o modo câmera estiver ativo, renderiza apenas a câmera
   if (mostrarCamera) {
     return (
       <View style={styles.cameraContainer}>
@@ -134,7 +128,6 @@ export default function CadastroScreen() {
             editable={true}
             onChangeText={(t) => {
               setForm({ ...form, codigo_barras: t });
-              // 4. LÓGICA DE VISIBILIDADE NA DIGITAÇÃO
               if (t.length > 0) setExibirForm(true);
               else setExibirForm(false);
             }}
@@ -154,7 +147,6 @@ export default function CadastroScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* 5. CONDICIONAL PARA EXIBIR O RESTANTE DO FORMULÁRIO */}
         {exibirForm && (
           <View style={{ marginTop: 10 }}>
             <Text style={styles.label}>Nome do Produto:</Text>

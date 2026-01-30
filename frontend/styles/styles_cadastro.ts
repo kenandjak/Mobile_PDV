@@ -62,7 +62,7 @@ export const styles = StyleSheet.create({
     padding: 18,
     borderRadius: 10,
     marginHorizontal: 20,
-    marginBottom: 130, // 110px da barra + 20px de respiro
+    marginBottom: 130,
     alignItems: "center",
   },
   inputDisabled: { backgroundColor: "#eee", color: "#888" },

@@ -9,7 +9,7 @@ class ProdutoBase(BaseModel):
     estoque: int
 
 class ProdutoCreate(ProdutoBase):
-    pass # Usamos isso para criação
+    pass 
 
 class ProdutoSchema(ProdutoBase):
     id: int

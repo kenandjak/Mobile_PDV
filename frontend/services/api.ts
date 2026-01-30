@@ -1,17 +1,14 @@
 import axios from "axios";
 
-// URL do túnel (LocalTunnel)
-const API_URL = "https://better-rockets-yawn.loca.lt";
+const API_URL = "https://mobile-pdv.onrender.com";
 
 const api = axios.create({
   baseURL: API_URL,
 });
 
 export const apiService = {
-  // Busca produto para o scan
   buscarProduto: (codigo: string) => api.get(`/produtos/${codigo}`),
 
-  // Registra a venda finalizada
   finalizarVenda: (itens: any[]) =>
     api.post("/vendas", {
       itens: itens.map((item) => ({

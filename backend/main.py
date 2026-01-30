@@ -24,15 +24,14 @@ def buscar_produto(codigo: str, db: Session = Depends(get_db)):
 
 @app.post("/produtos", response_model=ProdutoSchema)
 def cadastrar_produto(produto: ProdutoCreate, db: Session = Depends(get_db)):
-    # 1. Verifica se o produto já existe
+    # Verifica se o produto já existe
     produto_existente = ProdutoService.buscar_por_codigo(db, produto.codigo_barras)
     if produto_existente:
         raise HTTPException(
             status_code=400, 
             detail="Este código de barras já está cadastrado."
         )
-    
-    # 2. Chama o serviço para salvar
+
     return ProdutoService.criar_produto(db, produto)
 
 @app.put("/produtos/{codigo}")

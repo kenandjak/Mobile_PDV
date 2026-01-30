@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 15,
     elevation: 4,
-    marginBottom: 120, // Espaço para não cobrir com a TabBar
+    marginBottom: 120,
   },
   label: { fontWeight: "bold", marginTop: 15, color: "#444", fontSize: 14 },
   input: {

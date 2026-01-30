@@ -32,7 +32,6 @@ export default function EditScreen() {
     estoque: "",
   });
 
-  // Função centralizada para buscar produto
   const realizarBusca = async (codigo: string) => {
     try {
       const res = await apiService.buscarProduto(codigo);
@@ -53,8 +52,8 @@ export default function EditScreen() {
 
   const handleScan = ({ data }: { data: string }) => {
     setMostrarCamera(false);
-    setForm({ ...form, codigo_barras: data }); // Preenche o campo visualmente
-    realizarBusca(data); // Tenta buscar os dados
+    setForm({ ...form, codigo_barras: data });
+    realizarBusca(data);
   };
 
   const buscarManual = () => {
@@ -153,7 +152,7 @@ export default function EditScreen() {
             value={form.codigo_barras}
             onChangeText={(t) => {
               setForm({ ...form, codigo_barras: t });
-              if (carregado) setCarregado(false); // Reseta se mudar o código
+              if (carregado) setCarregado(false);
             }}
             placeholder="Código EAN-13"
             keyboardType="numeric"
@@ -174,7 +173,6 @@ export default function EditScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* Só mostra os campos se o produto foi encontrado */}
         {carregado ? (
           <View style={{ marginTop: 10 }}>
             <View style={styles.divider} />
