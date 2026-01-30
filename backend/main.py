@@ -6,11 +6,20 @@ from services.venda_service import VendaService
 from services.produto_service import ProdutoService
 from schemas import ProdutoCreate, ProdutoSchema
 from database import engine, get_db
+from fastapi.middleware.cors import CORSMiddleware
 
-# Cria as tabelas se não existirem
+
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/produtos/{codigo}")
 def buscar_produto(codigo: str, db: Session = Depends(get_db)):
@@ -24,7 +33,6 @@ def buscar_produto(codigo: str, db: Session = Depends(get_db)):
 
 @app.post("/produtos", response_model=ProdutoSchema)
 def cadastrar_produto(produto: ProdutoCreate, db: Session = Depends(get_db)):
-    # Verifica se o produto já existe
     produto_existente = ProdutoService.buscar_por_codigo(db, produto.codigo_barras)
     if produto_existente:
         raise HTTPException(
