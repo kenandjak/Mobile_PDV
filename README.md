@@ -5,8 +5,8 @@
 ---
 
 <p align="center">
-  <video src="assets/mobile_pdv.mp4" width="500" controls>
-    Pode ser que seu navegador não suporte o player de vídeo.
+  <video src= "https://github.com/user-attachments/assets/0a85c5f2-c095-4ac3-b5b8-0ab74d380ae3" width="250" >
+    Pode ser que seu navegador não suporte vídeos.
   </video>
 </p>
 
